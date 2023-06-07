@@ -118,6 +118,11 @@ def fetch_attributes(url):
 
     soup = bs(r.text, 'html.parser')
     
+    # TODO Remove this BS. Just download the watch page
+    # 1. Find this <div article-item-container wt-search-result>
+    # 2. Open the link
+    # 3. Download the page
+    # 4. Done
     if soup.findAll('span', {"class":'js-price-shipping-country'}):
         price = {'Price' : soup.findAll('span', {"class":'js-price-shipping-country'})[0].get_text()}
     else:
